@@ -1,9 +1,15 @@
 public abstract class Entity {
 
     //Every entity should have these
-    Double health;
-    Double attack;
-    Boolean alive;
+    protected Double health;
+    protected Double attack;
+    protected Boolean alive;
+
+    //constructor
+    public Entity(){
+        setAlive(true);
+    }
+
 
     //Setters
     public void setHealth(Double healthModify){
@@ -12,8 +18,8 @@ public abstract class Entity {
     public void setAttack(double attackModify){
         this.attack = attackModify;
     }
-    public void setDeathStatus(){
-        this.alive = false;
+    public void setAlive(Boolean status){
+        this.alive = status;
     }
 
     //Getters
@@ -24,9 +30,4 @@ public abstract class Entity {
         return attack;
     }
 
-    public void entityDeath(){
-        if(health <= 0){
-            setDeathStatus();
-        }
-    }
 }
