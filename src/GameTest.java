@@ -11,7 +11,7 @@ public class GameTest {
         Double StartingAttack = 2.5;
         Double StartingHealth = 20.0;
         assertEquals(StartingAttack,player.getAttack());
-        assertEquals(StartingHealth, player.gethealth());
+        assertEquals(StartingHealth, player.getHealth());
     }
 
     //Testing for Mob entity creation
@@ -24,4 +24,17 @@ public class GameTest {
         assertEquals(attack,mob.getAttack());
 
     }
+
+    @Test
+    public void checkValueAfterAttack(){
+        Mob mob1 = new Mob();
+        Mob mob2 = new Mob();
+        mob1.setAttack(10.0);
+        mob2.setHealth(13.0);
+        assertTrue(mob1.initiateAttack(mob2));
+        assertEquals((Double)3.0,mob2.getHealth());
+        //
+    }
+
+
 }
