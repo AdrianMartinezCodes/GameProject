@@ -1,4 +1,4 @@
-public class Player extends Entity {
+public class Player extends Collisions {
     //Starting player stats
     final private  Double START_ATTACK = 2.5;
     final private  Double START_HEALTH = 20.0;
