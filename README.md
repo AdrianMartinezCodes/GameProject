@@ -20,4 +20,4 @@ I do, however, envision using this program to help beginners code. Once the GUI 
 
 ## Closing remarks
 
-If anyone is also interested in honing their skills or implementing their own design, you are welcome to fork this project. Ultimately, if this project has helped you in any way I am happy for that to be the case. I only ask for credit in return
+If anyone is also interested in honing their skills or implementing their own design, you are welcome to fork this project. Ultimately, if this project has helped you in any way I am happy for that to be the case. I only ask for credit in return.
