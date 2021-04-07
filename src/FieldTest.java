@@ -43,4 +43,32 @@ public class FieldTest {
         assertFalse(field.fieldIsFull());
     }
 
+    @Test
+    public void movePlayer(){
+        field.generateEntity(player);
+        assertTrue(field.updateEntityLocation(player,3,4));
+    }
+
+    @Test
+    public void moveMob(){
+        field.generateEntity(mob);
+        assertTrue(field.updateEntityLocation(mob,3,4));
+    }
+
+    @Test
+    public void movePlayerCheckCoords(){
+        field.generateEntity(player);
+        field.updateEntityLocation(player,3,4);
+        assertEquals(3,(int)player.getxCord());
+        assertEquals(4, (int)player.getyCord());
+    }
+
+    @Test
+    public void moveMobCheckCoords(){
+        field.generateEntity(mob);
+        field.updateEntityLocation(mob,3,4);
+        assertEquals(3,(int) mob.getxCord());
+        assertEquals(4,(int) mob.getyCord());
+    }
+
 }
