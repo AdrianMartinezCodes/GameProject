@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Random;
 
 public class Field {
@@ -11,6 +12,7 @@ public class Field {
     Random rand = new Random();
     //population keeps track of how populated the field is. Cannot exceed maxPopulation
     int maxPopulation;
+    HashMap<Entity,Integer> entityMap;
     int population;
 
     /**
@@ -21,6 +23,7 @@ public class Field {
         this.yRange = DEFAULT_Y;
         field = new Object[xRange][yRange];
         maxPopulation = xRange * yRange;
+        entityMap = new HashMap<>(maxPopulation);
     }
 
     /**
@@ -37,6 +40,7 @@ public class Field {
         this.yRange = yRange;
         field = new Object[xRange][yRange];
         maxPopulation = xRange * yRange;
+        entityMap = new HashMap<>(maxPopulation);
     }
 
     //public objectsInField
@@ -52,10 +56,13 @@ public class Field {
         if(fieldIsFull()){
             return false;
         }
-        while(field[xLocation][yLocation] != null){
+        do {
             xLocation = rand.nextInt(xRange);
             yLocation = rand.nextInt(yRange);
-        }
+        }while (field[xLocation][yLocation] != null);
+        entity.setXCord(xLocation);
+        entity.setYCord(yLocation);
+        entityMap.put(entity,1);
         population++;
         return true;
     }
@@ -84,6 +91,8 @@ public class Field {
         }
         field[entity.getxCord()][entity.getyCord()] = null;
         field[xLocation][yLocation] = entity;
+        entity.setXCord(xLocation);
+        entity.setYCord(yLocation);
         return true;
     }
 
