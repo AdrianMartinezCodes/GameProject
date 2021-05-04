@@ -6,7 +6,7 @@ Breach: Immenent
 ## Purpose
 Purpose of this game is to practice my programming skills. It uses the LibGDX library(OpenGL)for GUI support. However, everything else will be coded by me.
 
-Currently working on player/mob animation. Next: Procedual generation
+Currently working on player/mob animation. Next: Controlling the character and random walks for mobs
 
 ## Checklist
 
@@ -19,11 +19,14 @@ Currently working on player/mob animation. Next: Procedual generation
 - ~Title Screen~
 - ~End Screen~
 - Animating Player/Mobs
+- Control Player
+- Simple AI for mob(random walks)
 - Camera
-- Simple Procedual Generation/Game Screen
+- Simple Procedual Generation for map(aka Game Screens)
 - Sounds
 - Advanced Collisions
 - Advanced Procedual Generation
+- Advanced AI for mobs(move to player)
 - Plot?
 
 ## WIP Photos
