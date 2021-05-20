@@ -1,10 +1,13 @@
 # Null Exempt
 Objective: Explore
+
 Escape plan: none
+
 Breach: Immenent
 
+
 ## Purpose
-Purpose of this game is to practice my programming skills. It uses the LibGDX library(OpenGL)for GUI support. However, everything else will be coded by me.
+Purpose of this game is to practice my programming skills. It uses the LibGDX library(OpenGL)for GUI support. However, everything else will be coded by me. Code can be found within ```/core/src```
 
 Currently working on player/mob animation. Next: Controlling the character and random walks for mobs
 
