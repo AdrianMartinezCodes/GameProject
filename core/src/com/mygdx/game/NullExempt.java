@@ -1,12 +1,12 @@
 package com.mygdx.game;
 
+import Entity.Mob;
+import Entity.Player;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class NullExempt extends Game {
@@ -14,20 +14,23 @@ public class NullExempt extends Game {
 
 	SpriteBatch batch;
 	BitmapFont font;
-
-	Texture texture;
-
-	TextureRegion[][] splitTiles;
-
+	TextureAtlas atlas;
+	SpriteBatch spriteBatch;
+	Player player;
+	float stateTime;
+	Mob slime;
 
 	@Override
 	public void create () {
+		float PLAYER_FRAMES = 0.33f;
+		float MOB_FRAMES = .15f;
+		player = new Player();
+		slime = new Mob();
 		batch = new SpriteBatch();
-		shapeRenderer = new ShapeRenderer();
 		font = new BitmapFont();
-		texture = new Texture(Gdx.files.internal("CosmicLilac_Tiles.png"));
-		splitTiles = TextureRegion.split(texture,16,16);
-
+		player.setIdleAnimation(PLAYER_FRAMES, "player-idle");
+		slime.setIdleAnimation(MOB_FRAMES,"slime");
+		stateTime = 0f;
 		setScreen(new TitleScreen(this));
 	}
 
@@ -36,5 +39,7 @@ public class NullExempt extends Game {
 		batch.dispose();
 		shapeRenderer.dispose();
 		font.dispose();
+		spriteBatch.dispose();
+		atlas.dispose();
 	}
 }
