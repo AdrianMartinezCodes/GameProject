@@ -28,7 +28,8 @@ public class NullExempt extends Game {
 		slime = new Mob();
 		batch = new SpriteBatch();
 		font = new BitmapFont();
-		player.setIdleAnimation(PLAYER_FRAMES, "player-idle");
+		player.setMovements(PLAYER_FRAMES, "run");
+		player.setIdleAnimation(PLAYER_FRAMES,"player-idle");
 		slime.setIdleAnimation(MOB_FRAMES,"slime");
 		stateTime = 0f;
 		setScreen(new TitleScreen(this));

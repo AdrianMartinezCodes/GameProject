@@ -1,14 +1,10 @@
 package com.mygdx.game;
 
 
-import Entity.Player;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.Vector2;
 
 public class GameScreen extends ScreenAdapter {
 
@@ -33,8 +29,14 @@ public class GameScreen extends ScreenAdapter {
                 game.player.getIdleAnimationKeyFrame(game.stateTime,true);
         TextureRegion slimeFrame =
                 game.slime.getIdleAnimationKeyFrame(game.stateTime,true);
+
+
+        game.player.UpdatePlayer(delta);
         game.batch.begin();
-        game.batch.draw(playerFrame,game.player.getxCord(),game.player.getyCord());
+        game.batch.draw(game.player.fm.getKeyFrame(game.stateTime,true),
+                game.player.getxCord(), game.player.getyCord());
+        //game.batch.draw((Texture) fm.getKeyFrame(statetime, loop), position.x, position.y);
+        //game.batch.draw(playerFrame,game.player.getxCord(),game.player.getyCord());
         game.batch.draw(slimeFrame,game.slime.getxCord(),game.slime.getyCord());
         game.batch.end();
     }
